@@ -2,6 +2,7 @@ package com.example.recuprimerparciallabov.mvc;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,20 +24,16 @@ public class EditarView {
         this.editarModel = moldeModel;
         this.editarController = moldeController;
 
-
-
-
         Button btnEditar = activity.findViewById(R.id.btnEditar);
         this.nombre = activity.findViewById(R.id.inputName);
         this.cantidad = activity.findViewById(R.id.inputCantidad);
         this.precio =  activity.findViewById(R.id.inputPrecio);
 
-
         btnEditar.setOnClickListener(this.editarController);
 
-        nombre.setText(extras.getString("name"));
-        cantidad.setText(extras.getString("count"));
-        precio.setText(extras.getString("price"));
+        nombre.setText(extras.getString("nombre"));
+        cantidad.setText(extras.getString("cantidad"));
+        precio.setText(extras.getString("precio"));
 
        this.editarModel.setIndex(Integer.valueOf(extras.getInt("position")));
     }

@@ -23,17 +23,13 @@ public class EditarActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar);
-
-
         EditarModel model = new EditarModel(this);
         EditarController controller = new EditarController(model, this);
         Bundle extras = super.getIntent().getExtras();
         EditarView view = new EditarView(this, model, controller, extras);
 
        controller.setView(view);
-        /*ActionBar ab = getSupportActionBar();
-        ab.setTitle("editar");
-        ab.setDisplayHomeAsUpEnabled(true);*/
+
 
     }
     @Override

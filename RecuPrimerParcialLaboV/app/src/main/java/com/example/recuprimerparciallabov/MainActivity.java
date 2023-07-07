@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements onItemClick, Hand
         Thread ts= new Thread(new ConsultasHTTP("http://192.168.1.50:3000/productos",handler));
         ts.start();
      /* this.AdapterProducto = new AdapterProducto (productos,this);
-
         RecyclerView rv = super.findViewById(R.id.recycler);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
         rv.setLayoutManager(linearLayoutManager);
@@ -47,11 +46,9 @@ public class MainActivity extends AppCompatActivity implements onItemClick, Hand
         Intent intent = new Intent(this, EditarActivity.class);
         ProductoModel prod = this.productos.get(position);
         intent.putExtra("position", position);
-        intent.putExtra("name", prod.getNombre());
-        intent.putExtra("count", prod.getCantidad());
-        intent.putExtra("price", prod.getPrecio());
-
-
+        intent.putExtra("nombre", prod.getNombre());
+        intent.putExtra("cantidad", prod.getCantidad());
+        intent.putExtra("precio", prod.getPrecio());
         startActivity(intent);
     }
     @Override
@@ -72,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements onItemClick, Hand
   protected void onRestart() {
         ProductoModel prodEditado =  EditarModel.getProdEditado();
         int indexEditado;
-
+        Log.d("PRODeditado", String.valueOf(prodEditado));
         if(prodEditado != null){
             indexEditado = EditarModel.getIndex();
             ProductoModel prodEditar = this.productos.get(indexEditado);

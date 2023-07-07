@@ -1,9 +1,6 @@
 package com.example.recuprimerparciallabov;
 
-import android.os.Build;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 
 import java.util.Objects;
 
@@ -13,13 +10,14 @@ public class ProductoModel {
     private int precio;
     private int id;
 
-    public ProductoModel(String nombre, int cantidad, int precio,int id) {
+    public ProductoModel(String nombre, int cantidad, int precio) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.id=id;
+
     }
     public ProductoModel() {}
+
     public int getId() {
         return this.id;
     }

@@ -1,4 +1,6 @@
-package com.example.recuprimerparciallabov;
+package com.example.recuprimerparciallabov.http;
+
+import com.example.recuprimerparciallabov.ProductoModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;

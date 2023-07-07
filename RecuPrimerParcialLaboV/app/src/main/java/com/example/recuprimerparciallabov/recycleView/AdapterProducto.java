@@ -1,4 +1,4 @@
-package com.example.recuprimerparciallabov;
+package com.example.recuprimerparciallabov.recycleView;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -8,24 +8,24 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.recuprimerparciallabov.MainActivity;
+import com.example.recuprimerparciallabov.R;
+import com.example.recuprimerparciallabov.ProductoModel;
+import com.example.recuprimerparciallabov.onItemClick;
+
 import java.util.List;
 
 public class AdapterProducto extends RecyclerView.Adapter<ProductoViewHolder> {
 
 
-   List<ProductoModel> productos;
+   public List<ProductoModel> productos;
     private Handler handler;
-    private MainActivity mainAct;onItemClick listener;
-
-   /* public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }*/
+    private MainActivity mainAct;
+    onItemClick listener;
 
 
-
-
-    public AdapterProducto(MainActivity activity, List<ProductoModel> productos){
-        this.mainAct = activity;
+    public AdapterProducto( List<ProductoModel> productos,onItemClick listener){
+       // this.mainAct = activity;
         this.productos = productos;
         this.listener = listener;
     }
@@ -36,7 +36,7 @@ public class AdapterProducto extends RecyclerView.Adapter<ProductoViewHolder> {
     public ProductoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
-        return new ProductoViewHolder(mainAct, v);
+        return new ProductoViewHolder( v,listener);
 
     }
 

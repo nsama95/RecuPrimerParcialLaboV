@@ -1,9 +1,9 @@
-package com.example.recuprimerparciallabov;
+package com.example.recuprimerparciallabov.http;
 
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.os.Handler;
+
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class ConsultasHTTP implements  Runnable{
             Message message= new Message();
             message.arg1=1;
             String personaJson=manager.getData(url);
-            message.obj=ParserJson.parsearJSON(personaJson);
+            message.obj= ParserJson.parsearJSON(personaJson);
             message.arg2=2;
 
             Log.d("respuesta:", message.obj.toString());

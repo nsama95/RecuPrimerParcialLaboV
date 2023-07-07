@@ -2,7 +2,7 @@
     <string name="app_name">RecuPrimerParcialLaboV</string>
     <string name="cantidad">Cantidad: </string>
     <string name="precio">Precio: </string>
-    <string name="guardar">Guardar: </string>
+    <string name="guardar">Guardar </string>
     <string name="nombre">Nombre: </string>
     <string name="labelNombre">Nombre: </string>
 </resources>
